@@ -23,7 +23,7 @@ public class LoginServelet extends javax.servlet.http.HttpServlet {
         }
         else
         {
-            request.setAttribute("message","Erreur Remplir les champs");
+            request.setAttribute("message","Erreur Remplir les champs vide");
             this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 
         }
