@@ -1,6 +1,7 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Mon formulaire</title>
+    <title></title>
 </head>
 <body>
 <style>
@@ -8,7 +9,9 @@
         background-color: #f3f3f3;
         font-family: "Segoe UI";
     }
-
+    .erreur{
+        color: red;
+    }
     input[type=text],input[type=password]{
         width: 80%;
         height: 40px;
@@ -33,11 +36,11 @@
 
 <div class="part2" style="background-color: white; position: absolute; width: 27%; height:50%; left:36.5%; top: 25%; box-shadow:1px 5px 5px rgba(0,0,0,0.2);">
     <h3 style="color: rgba(0,0,0,0.5); text-align: center;">Authentification  étudiants d'ingé 4</h3>
-    <form>
+    <form action="Login" method="post">
         <br/>
         <input type="text" name="login" required placeholder="login"><br/>
         <br/><input type="password" name="motDePasse" required placeholder="mot de passe"><br/> <br>
-
+        <span class="erreur" style="margin-left: 50px;">${requestScope.message}</span> <br>
         <br/><input type="submit" value="Envoyer" />
         <input type="reset" value="Effacer" />
 
