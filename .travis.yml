@@ -9,9 +9,7 @@ script:
   - mvn test -B
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  on:
-    branch: master
+  provider: heroku
+  api_key: "446b809b-fb07-46fc-88e4-5bbb0f50848d"
+  app: travis-formulaire
+  on: master
