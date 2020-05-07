@@ -13,7 +13,6 @@ deploy:
   api_key:
     secure: "Qts+i1Udooi66Bg9dO4jnuoYVbNnFyiSOoumLoMsYoUvzoqXkuvPClkKVVD916g4BFEEhOuO/EkMw6gccuScV03UOLCnCl2k+pXykcT5iuekmYAdl4xXcVh/LTyh0rPlqUEfdpY0udl/Ri70RhzSi6e8TRpEbkD5oigcK+kZe7kEFYuDFgCPVIDfHTg+AyfCoAiTTiPqd1QvoMzl53T36JIJAASIGpb/s50Kj/D+KEp/zow/W4zg3BtyR2nkZdsd4F75YQnvTun7jUI0CyldIEo+rt3D7ClfYHVgUHh6wmO7D64meg8Rt+9OZ1CwFvemvEJ1k+30iLOG0TEjWCWk+5h87cAOo+Tb/6T0SqEKdawTwxIInYlLV4zQimfos5IALm0ehuZfH6hUrgjYhUB/+jmi4kJKnQJAWjEEmwzDsoC8MOep0jBpiUcABKsOlc/KL6BsH5jDnEmMQtQ5IbtmrETYqWPN5JAsg+UMXvKzTDoRxZ9zRGnQQ6TVBluOjDflDYYU0lv5LOSEvT1NbRVzaQJvWCeywEXhrDJWIiVXi2W9MejFTItMYbhFnp6cVhayIIBM68ChZ4R4McPhlgENV/h+65XWPf2VbEClN5I/BQGwsr/U+69/ll11BFDgA3oVsL0541G86MI3/7j8OnAKHaq40xjyLU1jPF6zAC7L21o="
   app:
-    production: travis-formulaire
-  on:
-    branch: master
+    master: travis-formulaire
+    production: formulaire
   skip_cleanup: true
