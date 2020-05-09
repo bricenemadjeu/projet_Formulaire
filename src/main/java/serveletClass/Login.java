@@ -1,9 +1,12 @@
 package serveletClass;
 
 import personne.User;
+import personne.Utilisateur;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
+import javax.jws.soap.SOAPBinding;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,15 +20,23 @@ public class Login extends javax.servlet.http.HttpServlet {
         String login=request.getParameter("login");
         String password=request.getParameter("motDePasse");
 
-        if (!login.equals("") && !password.equals("")){
-            User user = new User(login,password,true);
+        String passCrypt="";
+        Utilisateur utilisateur = new Utilisateur();
+        try {
+            passCrypt = utilisateur.cryptPassword(password);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        User user = utilisateur.checkLoginPassword(login,passCrypt);
+
+        if (user!=null){
             request.setAttribute("user",user);
             this.getServletContext().getRequestDispatcher("/compteUser.jsp").forward(request, response);
 
         }
         else
         {
-            request.setAttribute("message","Erreur Remplir les champs");
+            request.setAttribute("message","Incorrect password or login");
             this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 
         }

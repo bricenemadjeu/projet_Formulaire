@@ -8,6 +8,17 @@ install:
 script:
   - mvn test -B
 
+notifications:
+  email:
+    recipients:
+      - bricenemadjeu@gmail.com
+      - romaricagwa10@gmail.com
+      - yoandjimkouo@yahoo.com
+      - arlettewamba@gmail.com
+      - audreyjbea@gmail.com
+    on_success: always
+    on_failure: never
+
 deploy:
   provider: heroku
   skip_cleanup: true

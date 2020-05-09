@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Connexion</title>
 
-    <link rel="icon" type="image/png" href="images/favicon.ico"/>
+    <link rel="icon" type="image/png" href="images/isj.png"/>
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
@@ -23,23 +23,23 @@
 
     <div class="login-box animated fadeInUp">
         <div class="box-header">
-            <h2>Log In</h2>
+            <h2>Sign In</h2>
         </div>
         <form action="Login" method="post">
             <label for="username">Username</label>
             <br/>
-            <input type="text" style="border-radius: 10px;" id="username" name="login">
+            <input type="text" style="border-radius: 10px;" id="username" name="login" required>
             <br/>
             <label for="password">Password</label>
             <br/>
-            <input type="password" style="border-radius: 10px;" id="password" name="motDePasse">
+            <input type="password" style="border-radius: 10px;" id="password" name="motDePasse" required>
             <br/>
             <button type="submit">Sign In</button>
         </form>
         <br/>
-        <center><span style="margin-left: 50px; color: red">${requestScope.message}</span></center> <br>
+        <span style="margin-left: 50px; color: red; margin: 20px 0 0;">${requestScope.message}</span><br>
         <a href="#"><p class="small">Forgot your password?</p></a>
-        <a href="#"><p class="small">Create your account</p></a>
+        <a href="New-account"><p class="small">Create new account?</p></a>
     </div>
 
 </div>

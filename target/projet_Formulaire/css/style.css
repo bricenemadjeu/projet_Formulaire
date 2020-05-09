@@ -46,7 +46,7 @@ a:hover {
 }
 
 p.small {
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin: 20px 0 0;
 }
 
@@ -68,10 +68,10 @@ p.small {
 
 .login-box {
     background-color: white;
-    max-width: 340px;
+    max-width: 430px;
     margin: 0 auto;
     position: relative;
-    top: 40px;
+    top: 10px;
     padding-bottom: 30px;
     border-radius: 5px;
     box-shadow: 0 5px 50px rgba(0,0,0,0.4);
@@ -102,9 +102,25 @@ p.small {
     color: #888;
 }
 
+.login-box select {
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: .9em;
+    color: #888;
+}
+
 .login-box input:focus {
     outline: none;
-    border-color: #665851;
+    border-color: rgb(43,43,255);
+    transition: 0.5s;
+    color: #665851;
+}
+
+.login-box select:focus {
+    outline: none;
+    border-color: rgb(43,43,255);
     transition: 0.5s;
     color: #665851;
 }

@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Bienvenu</title>
+    <title>Welcome</title>
 
-    <link rel="icon" type="image/png" href="images/favicon.ico"/>
+    <link rel="icon" type="image/png" href="images/isj.png"/>
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
@@ -17,14 +17,17 @@
 
 <body>
 <div class="container">
-
+    <div class="top">
+        <h1 id="title" class="hidden"><span id="logo">My <span>Account</span></span></h1>
+    </div>
     <div class="login-box animated fadeInUp">
         <div class="box-header">
-            <h2>Bienvenu</h2>
+            <h2>Welcome</h2>
         </div>
-        <p class="welcome">Welcome ${user.name}</p>
+        <p class="welcome">Welcome ${user.firstname} ${user.lastname}</p>
+        <p class="welcome">Your course is ${user.course}</p><br>
+        <a href="Login"><p class="small">Log Out?</p></a>
     </div>
-
 </div>
 </body>
 
@@ -32,18 +35,6 @@
     $(document).ready(function () {
         $('#logo').addClass('animated fadeInDown');
         $("input:text:visible:first").focus();
-    });
-    $('#username').focus(function() {
-        $('label[for="username"]').addClass('selected');
-    });
-    $('#username').blur(function() {
-        $('label[for="username"]').removeClass('selected');
-    });
-    $('#password').focus(function() {
-        $('label[for="password"]').addClass('selected');
-    });
-    $('#password').blur(function() {
-        $('label[for="password"]').removeClass('selected');
     });
 </script>
 </html>
