@@ -37,13 +37,13 @@ public class Login extends javax.servlet.http.HttpServlet {
         else
         {
             request.setAttribute("message","Incorrect password or login");
-            this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+            this.getServletContext().getRequestDispatcher("/myLogin.jsp").forward(request, response);
 
         }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/myLogin.jsp").forward(request, response);
     }
 }
