@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
 
 @WebServlet(name = "account")
 public class NewAccountServlet extends HttpServlet {
@@ -32,17 +33,24 @@ public class NewAccountServlet extends HttpServlet {
         }
 
         User user = new User(firstname,lastname,gender,city,address,email,login,cryptpass,course);
-        int verif = utilisateur.addUser(user);
-        if(verif>1){
-            request.setAttribute("error","failed to create account");
+        int verif = 0;
+        try {
+            verif = utilisateur.addUser(user);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        if(verif<1){
+            request.setAttribute("error","Failed to create account");
+            this.getServletContext().getRequestDispatcher("/createAccount.jsp").forward(request, response);
+        }
+        else if (verif==2){
+            request.setAttribute("error","Try again with another login");
             this.getServletContext().getRequestDispatcher("/createAccount.jsp").forward(request, response);
         }
         else {
-            request.setAttribute("pass","creation of successful account!");
+            request.setAttribute("pass","Creation of successful account!");
             this.getServletContext().getRequestDispatcher("/createAccount.jsp").forward(request, response);
         }
-
-
 
     }
 

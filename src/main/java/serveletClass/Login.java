@@ -29,14 +29,20 @@ public class Login extends javax.servlet.http.HttpServlet {
         }
         User user = utilisateur.checkLoginPassword(login,passCrypt);
 
-        if (user!=null){
-            request.setAttribute("user",user);
-            this.getServletContext().getRequestDispatcher("/compteUser.jsp").forward(request, response);
+        if (user.isConnected()){
+            if(user.isActive()){
+                request.setAttribute("user",user);
+                this.getServletContext().getRequestDispatcher("/compteUser.jsp").forward(request, response);
+            }
+            else {
+                request.setAttribute("message","Incorrect password or login");
+                this.getServletContext().getRequestDispatcher("/myLogin.jsp").forward(request, response);
+            }
 
         }
         else
         {
-            request.setAttribute("message","Incorrect password or login");
+            request.setAttribute("message","Connection Error. Retry");
             this.getServletContext().getRequestDispatcher("/myLogin.jsp").forward(request, response);
 
         }

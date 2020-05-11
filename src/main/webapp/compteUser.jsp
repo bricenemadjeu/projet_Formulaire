@@ -26,7 +26,7 @@
         </div>
         <p class="welcome">Welcome ${user.firstname} ${user.lastname}</p>
         <p class="welcome">Your course is ${user.course}</p><br>
-        <a href="Login"><p class="small">Log Out?</p></a>
+        <a href="Login"><p class="small">Sign Out?</p></a>
     </div>
 </div>
 </body>

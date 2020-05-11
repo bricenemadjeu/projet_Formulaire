@@ -10,9 +10,21 @@ public class User {
     private String login;
     public String password;
     private String course;
-    public boolean isActive;
+    private boolean isActive;
+    private boolean isConnected;
 
     public User() {
+        this.firstname = "";
+        this.lastname = "";
+        this.gender = "";
+        this.city = "";
+        this.address = "";
+        this.email = "";
+        this.login = "";
+        this.password = "";
+        this.course = "";
+        this.isActive= false;
+        this.isConnected = false;
     }
 
     public User(String firstname, String lastname, String gender, String city, String address, String email, String login, String password, String course) {
@@ -25,6 +37,8 @@ public class User {
         this.login = login;
         this.password = password;
         this.course = course;
+        this.isActive = true;
+        this.isConnected = true;
     }
 
     public String getFirstname() {
@@ -53,6 +67,14 @@ public class User {
 
     public String getCity() {
         return city;
+    }
+
+    public boolean isConnected() {
+        return isConnected;
+    }
+
+    public void setConnected(boolean connected) {
+        isConnected = connected;
     }
 
     public void setCity(String city) {

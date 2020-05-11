@@ -117,9 +117,10 @@
             <button type="submit">Create account</button>
         </form>
         <br/>
-        <a href="Login"><p class="small">Log In?</p></a><br>
         <span style="margin-left: 50px; color: red; margin: 20px 0 0;">${requestScope.error}</span>
         <span style="margin-left: 50px; color: green;  margin: 20px 0 0;">${requestScope.pass}</span>
+        <a href="Login"><p class="small">Log In?</p></a><br>
+
     </div>
 
 </div>
