@@ -20,9 +20,9 @@ public class testclass {
 
     @Test
     public void method() {
-        org.junit.Assert.assertTrue(new ArrayList().isEmpty());
-
+        org.junit.Assert.assertTrue(arlette.isConnected == true);
     }
+    
 
     @AfterEach
     public void tearThis() {
