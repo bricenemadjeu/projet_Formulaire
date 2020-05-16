@@ -85,7 +85,7 @@
                 <tr>
                     <td>
                         <table>
-                            <tr><td><label>Login</label></td></tr>
+                            <tr><td><label>USERNAME</label></td></tr>
                             <tr><td><input type="text" name="login" placeholder="Login" title="Login" required></td></tr>
                         </table>
                     </td>
@@ -119,7 +119,7 @@
         <br/>
         <span style="margin-left: 50px; color: red; margin: 20px 0 0;">${requestScope.error}</span>
         <span style="margin-left: 50px; color: green;  margin: 20px 0 0;">${requestScope.pass}</span>
-        <a href="Login"><p class="small">Log In?</p></a><br>
+        <a href="Login"><p class="small">Sign In?</p></a><br>
 
     </div>
 

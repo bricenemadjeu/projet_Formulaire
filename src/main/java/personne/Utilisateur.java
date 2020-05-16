@@ -15,6 +15,7 @@ public class Utilisateur {
     public Utilisateur() {
     }
 //-----------------------------------------------------Mysql-----------------------------------------------------------------------------
+
     /*
     public int addUser(User user) throws SQLException {
         int message=0;
@@ -119,6 +120,12 @@ public class Utilisateur {
     //-------------------------------------------Postgresql-------------------------------------------------------------------------------
 
 
+    /***
+     * Add New user in Data base
+     * @param user
+     * @return message
+     * @throws SQLException
+     */
     public int addUser(User user) throws SQLException {
         int message=0;
         ConnexionBD connexionBD = new ConnexionBD();
@@ -154,6 +161,12 @@ public class Utilisateur {
     }
 
 
+    /***
+     * Check if the login and password exit in data base and return an objet User
+     * @param login
+     * @param password
+     * @return Objet user
+     */
     public User checkLoginPassword(String login, String password){
         User user= new User();
         ConnexionBD connexionBD = new ConnexionBD();
@@ -184,6 +197,13 @@ public class Utilisateur {
         return user;
     }
 
+
+    /***
+     * Check if the login exit in data base during the creation of new account and return true or false
+     * @param login
+     * @return boolean
+     * @throws SQLException
+     */
     private boolean checkExistUser(String login) throws SQLException {
         User user= null;
         ConnexionBD connexionBD = new ConnexionBD();
@@ -204,6 +224,14 @@ public class Utilisateur {
         else {return false;}
     }
 
+
+    /***
+     * This function cryptate a password of user
+     * @param password
+     * @return String encrypt password
+     * @throws UnsupportedEncodingException
+     * @throws NoSuchAlgorithmException
+     */
     public String cryptPassword(String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         byte[] bytesOfMessage = password.getBytes("UTF-8");
 
