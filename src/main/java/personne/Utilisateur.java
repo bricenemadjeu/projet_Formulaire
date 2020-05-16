@@ -135,7 +135,7 @@ public class Utilisateur {
             }
             else {
                 try {
-                    PreparedStatement preparedStatement = connexionBD.loadDataBase().prepareStatement("INSERT INTO bd.account(firstname, lastname, gender, city, address, email, account_login, account_password, course) VALUES(?,?,?,?,?,?,?,?,?);");
+                    PreparedStatement preparedStatement = connexionBD.loadDataBase().prepareStatement("INSERT INTO account(firstname, lastname, gender, city, address, email, account_login, account_password, course) VALUES(?,?,?,?,?,?,?,?,?);");
                     preparedStatement.setString(1, user.getFirstname());
                     preparedStatement.setString(2, user.getLastname());
                     preparedStatement.setString(3, user.getGender());
@@ -174,7 +174,7 @@ public class Utilisateur {
         if(connexionBD.loadDataBase()!=null) {
             ResultSet rs = null;
             try {
-                String sql = "SELECT firstname, lastname, gender, city, address, email, account_login, account_password, course FROM bd.account WHERE account_login=? AND account_password=?;";
+                String sql = "SELECT firstname, lastname, gender, city, address, email, account_login, account_password, course FROM account WHERE account_login=? AND account_password=?;";
                 // Exécution de la requête
                 PreparedStatement ps = connexionBD.loadDataBase().prepareStatement(sql);
                 ps.setString(1, login);
@@ -208,7 +208,7 @@ public class Utilisateur {
         User user= null;
         ConnexionBD connexionBD = new ConnexionBD();
         ResultSet rs = null;
-        String sql = "SELECT * FROM bd.account WHERE account_login=?;";
+        String sql = "SELECT * FROM account WHERE account_login=?;";
         PreparedStatement ps = connexionBD.loadDataBase().prepareStatement(sql);
         ps.setString(1, login);
         rs = ps.executeQuery();
