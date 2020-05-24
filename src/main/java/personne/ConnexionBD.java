@@ -42,7 +42,8 @@ public class ConnexionBD {
         }
 
         try {
-            connexion = DriverManager.getConnection("jdbc:postgresql://ec2-54-175-117-212.compute-1.amazonaws.com:5432/dbkl0pdk9cr80p", "nwupllodsrjhvn", "fc845ad9f53f15f11113a936f07848102472bcd6b2d173603495687b0e3c3c7c");
+            connexion = DriverManager.getConnection("jdbc:postgresql://ec2-54-175-117-212.compute-1.amazonaws.com:5432/dbkl0pdk9cr80p",
+                    "nwupllodsrjhvn", "fc845ad9f53f15f11113a936f07848102472bcd6b2d173603495687b0e3c3c7c");
         } catch (SQLException e) {
             e.printStackTrace();
         }

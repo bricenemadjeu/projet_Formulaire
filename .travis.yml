@@ -10,14 +10,12 @@ script:
 
 notifications:
   email:
-    recipients:
       - bricenemadjeu@gmail.com
       - romaricagwa10@gmail.com
       - yoandjimkouo@yahoo.com
       - arlettewamba@gmail.com
       - audreyjbea@gmail.com
-    on_success: always
-    on_failure: never
+      - ripebadga@gmail.com
 
 deploy:
   provider: heroku
