@@ -11,7 +11,7 @@ addons:
       secure: "J9m3KI2uckbfFg41Kamv6eWYLytUERLJWKW4HT/xYdzQbLcZ8aTsoxqcK29ogzq0mXNCODJf7jHjFiFi1u8/0Dam9m+pr/4qoeVLxAmvv3aOO02hfGDfmPSpVqh5md2TCsMarWK2LTwvMkCnf2CJrqEK7AE2vCdIZZzIeEk0hEEtc4zsJT/q+auEryZivaqqiGbh6PoaArQ921YLLvBGovCpj5IVYkkXhGht4/ktvJx7CeQWk1zDWOJQLdEhvB1zjoA6P0J9lb6pyPvy+Sjh0DI56crjJaqs+oyEmHzUrS83v7pGFOFK2G11GejMisDNTzZ/5E0Np2makPZL7jsAMlqwzM1tHe6+Rqt86ZhQ7owJ6zHwy5o8daSnNjRRTTjduLpk9QmnRRKVYI7m1Jq1DBdpm2k3ZxbuJpoUeHCvz+ZSrpr12BCcMQRNOTl6MSSru5PT+SX0bksfXn2CKrOS6en+6aGDustivlyw3afNNRSEjbazxKk6Bi4AFeLJ+X78WUcyLpRgB2MMD+pwEQkFEH8bEuiULHqK/+KV4dEx8qKBBNn2b3fIlH1V3DTNLejQ9SbHmG809dRXHB8grH0O/lcR3HtKzdFs3twPQZjr9vp1q07waKPjacBvReY1/Vs+MfVG19sqUDsJKa7yfSwhMZF6AqZu94uhGJYMVaADtlA="
 script:
   - mvn test -B
-  - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=myorg_myrepo
+  - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=myorg_myrepo -X
 
 notifications:
   email:
@@ -22,11 +22,4 @@ notifications:
       - audreyjbea@gmail.com
       - ripebadga@gmail.com
 
-deploy:
-  provider: heroku
-  skip_cleanup: true
-  api_key:
-    secure: "GuNc+1BlIWTOxneSEq7LgYwbDUoGOmuTZhnpTToUPokXsm9tO2AIEx9nagt1ZFKGNAUEB50vncpWkawENt/LPN3tePCGn2OXUzc5Azmrt10v0PB7N46w9BNyi9T3k1STS83Z8cM1wYfjQV9f4l0NNsjxpYYZvnTqU5mrjC1DxNhLGl4pJ/fM6vwhJNcpy/pVOef8EaFuO5nUinaAV7jR0PYyo3eHnQBPN8nXY71LvZAf+aTyCqBAeIyVidftNtoD9eRCAvtzz1cUZGLhIy53//lxC0vQo4peHkMNd3b8KYsXKGDC2kw9/Nqr1jWdrvhis0t8iclUJKtA2arULmgW2ssp27D1DPQUriAJwOMZILdKPRCdYDedTCVoG/DwsvckgqEqd0idxcTitPNClwALOoN1m5r3OufQghU37SXKk1vASGLanrVQKFluFdvYgfdmIej9RId5DhcPphWF8lIbhxRuS0VX9XaZprU1pXUkqbroUu8ojNAYObzcxkiS73SFPg8Qgq2Hnou9iEduis2RGNGNyO7i05OmErKDu3zdIlFLSXia615WOt5oRgss1htf4I48kzjXJCDVU0LDRRtE8KZwhihtuhcCjfY8BgOJFtA5ehMTlYH8Swf3q/rz1dqxPU2iW+BhfqxTZR6U2g89FIlOdjM498iTPWg7LjWNMQ8="
-  app: travis-projet
-  on:
-    branch: master
+
