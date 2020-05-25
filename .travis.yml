@@ -10,7 +10,8 @@ addons:
     token:
       secure: "J9m3KI2uckbfFg41Kamv6eWYLytUERLJWKW4HT/xYdzQbLcZ8aTsoxqcK29ogzq0mXNCODJf7jHjFiFi1u8/0Dam9m+pr/4qoeVLxAmvv3aOO02hfGDfmPSpVqh5md2TCsMarWK2LTwvMkCnf2CJrqEK7AE2vCdIZZzIeEk0hEEtc4zsJT/q+auEryZivaqqiGbh6PoaArQ921YLLvBGovCpj5IVYkkXhGht4/ktvJx7CeQWk1zDWOJQLdEhvB1zjoA6P0J9lb6pyPvy+Sjh0DI56crjJaqs+oyEmHzUrS83v7pGFOFK2G11GejMisDNTzZ/5E0Np2makPZL7jsAMlqwzM1tHe6+Rqt86ZhQ7owJ6zHwy5o8daSnNjRRTTjduLpk9QmnRRKVYI7m1Jq1DBdpm2k3ZxbuJpoUeHCvz+ZSrpr12BCcMQRNOTl6MSSru5PT+SX0bksfXn2CKrOS6en+6aGDustivlyw3afNNRSEjbazxKk6Bi4AFeLJ+X78WUcyLpRgB2MMD+pwEQkFEH8bEuiULHqK/+KV4dEx8qKBBNn2b3fIlH1V3DTNLejQ9SbHmG809dRXHB8grH0O/lcR3HtKzdFs3twPQZjr9vp1q07waKPjacBvReY1/Vs+MfVG19sqUDsJKa7yfSwhMZF6AqZu94uhGJYMVaADtlA="
 script:
-  - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=myorg_myrepo
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report
+  - if [ "$JAVA_HOME" = "/usr/lib/jvm/java-1.8.0-openjdk-amd64" ]; then mvn sonar:sonar; fi
 
 notifications:
   email:
