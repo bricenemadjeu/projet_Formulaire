@@ -23,7 +23,7 @@
 
     <div class="login-box animated fadeInUp">
         <div class="box-header">
-            <h2>Connection</h2>
+            <h2>Sign In</h2>
         </div>
         <form action="Login" method="post">
             <label for="username">Username</label>
