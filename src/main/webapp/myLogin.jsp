@@ -26,7 +26,7 @@
             <h2>Sign In</h2>
         </div>
         <form action="Login" method="post">
-            <label for="username">Username</label>
+            <label for="username">Login</label>
             <br/>
             <input type="text" style="border-radius: 10px;" id="username" name="login" required>
             <br/>

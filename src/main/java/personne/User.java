@@ -8,7 +8,7 @@ public class User {
     private String address;
     private String email;
     private String login;
-    public String password;
+    private String password;
     private String course;
     private boolean isActive;
     private boolean isConnected;
